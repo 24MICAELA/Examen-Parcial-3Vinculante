@@ -120,15 +120,12 @@ El proceso comienza con la generación de una lista de tareas y actores mediante
 
 **2. Asignación de Tareas**
 
-El método asignarTareas() distribuye las tareas a los actores según sus roles específicos. Por ejemplo:
+El método asignarTareas() distribuye las tareas a los actores según sus roles específicos. 
 
-El CEO gestiona tareas como la reserva de vuelo y la organización de documentos importantes.
-
-El asistente personal se encarga de actividades como empacar y coordinar el transporte de maletas.
-
-La agencia de viajes realiza gestiones relacionadas con los billetes.
-
-El servicio de transporte lleva al CEO al aeropuerto.
+Actor 1: Ejecutivo
+Actor 2: Gestión de maletas
+Actor 3: Gestión de billetes
+Actor 4: Gestión de documentos
 
 **3. Ejecución y Visualización de Resultados**
 
