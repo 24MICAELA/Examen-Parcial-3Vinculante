@@ -54,7 +54,9 @@ Entrega:
 ## Resolución del problema
 Cronograma de ejecución de las tareas
 
-<img src="https://github.com/user-attachments/assets/1c6fa63b-424a-489a-afc6-12e126ee0e4a" alt="image" style="width: 900px; height: center;">
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/1c6fa63b-424a-489a-afc6-12e126ee0e4a" alt="image" width="900">
+</div>
 
 El proyecto se organiza en torno a varias clases que gestionan la creación de tareas, la asignación de responsabilidades y la ejecución de eventos en secuencia. A continuación se describen los componentes principales:
 
