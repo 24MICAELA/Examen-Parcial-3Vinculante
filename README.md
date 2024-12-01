@@ -54,9 +54,7 @@ Entrega:
 ## Resolución del problema
 Cronograma de ejecución de las tareas
 
-<div style="text-align: center;">
-    <img src="https://github.com/user-attachments/assets/1c6fa63b-424a-489a-afc6-12e126ee0e4a" alt="image" style="width: 900px; height: auto;">
-</div>
+<img src="https://github.com/user-attachments/assets/1c6fa63b-424a-489a-afc6-12e126ee0e4a" alt="image" style="width: 900px; height: center;">
 
 El proyecto se organiza en torno a varias clases que gestionan la creación de tareas, la asignación de responsabilidades y la ejecución de eventos en secuencia. A continuación se describen los componentes principales:
 
@@ -122,10 +120,10 @@ El proceso comienza con la generación de una lista de tareas y actores mediante
 
 El método asignarTareas() distribuye las tareas a los actores según sus roles específicos. 
 
-Actor 1: Ejecutivo
-Actor 2: Gestión de maletas
-Actor 3: Gestión de billetes
-Actor 4: Gestión de documentos
+- Actor 1: Ejecutivo
+- Actor 2: Gestión de maletas
+- Actor 3: Gestión de billetes
+- Actor 4: Gestión de documentos
 
 **3. Ejecución y Visualización de Resultados**
 
