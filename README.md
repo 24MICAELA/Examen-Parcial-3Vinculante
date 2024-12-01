@@ -52,3 +52,99 @@ Entrega:
 
 ### Resolución del problema
 
+El proyecto se organiza en torno a varias clases que gestionan la creación de tareas, la asignación de responsabilidades y la ejecución de eventos en secuencia. A continuación se describen los componentes principales:
+
+Componentes Principales del Proyecto
+
+- Launcher: Actúa como el punto central del programa, encargándose de coordinar todas las actividades principales.
+
+- Actor: Representa a una entidad responsable de realizar un conjunto específico de tareas.
+
+- Tarea: Modela las tareas individuales, cada una con una identificación única, descripción y duración estimada.
+
+Estructura de Archivos y Descripción de Clases
+
+Launcher.h / Launcher.cpp
+
+La clase Launcher organiza el flujo de trabajo general del proyecto. Es responsable de crear las tareas y actores, asignar tareas y presentar los resultados al usuario.
+
+Métodos clave:
+
+crearTareas(): Genera y retorna una lista de tareas predefinidas.
+
+crearActores(): Genera y retorna una lista de actores predefinidos.
+
+asignarTareas(): Distribuye las tareas entre los actores según las responsabilidades definidas.
+
+ejecutar(): Ejecuta el proceso completo, incluyendo la creación de elementos, asignación de tareas y visualización de resultados.
+
+Actor.h / Actor.cpp
+
+La clase Actor define las entidades que gestionan las tareas, como el CEO, el asistente personal, la agencia de viajes y el servicio de transporte.
+
+Métodos clave:
+
+addTarea(const Tarea&): Asocia una tarea al actor.
+
+getDuracionTotal(): Calcula la duración total de todas las tareas asignadas.
+
+toString(): Retorna un texto formateado con el resumen de las tareas asignadas al actor.
+
+Tarea.h / Tarea.cpp
+
+La clase Tarea encapsula las características de cada tarea.
+
+Atributos: Cada tarea tiene un identificador único, una descripción y una duración.
+
+Métodos clave:
+
+getId(), getDesc(), getDuracion(): Getters para obtener el ID, la descripción y la duración de una tarea.
+
+toString(): Proporciona una representación textual de la tarea.
+
+main.cpp
+
+El archivo principal del programa que instancia la clase Launcher y llama al método ejecutar() para iniciar el flujo del programa.
+
+Descripción del Proceso
+
+1. Creación de Tareas y Actores
+
+El proceso comienza con la generación de una lista de tareas y actores mediante los métodos crearTareas() y crearActores() de la clase Launcher. Estos representan las responsabilidades y actividades necesarias para la preparación del CEO de cara a su reunión.
+
+2. Asignación de Tareas
+
+El método asignarTareas() distribuye las tareas a los actores según sus roles específicos. Por ejemplo:
+
+El CEO gestiona tareas como la reserva de vuelo y la organización de documentos importantes.
+
+El asistente personal se encarga de actividades como empacar y coordinar el transporte de maletas.
+
+La agencia de viajes realiza gestiones relacionadas con los billetes.
+
+El servicio de transporte lleva al CEO al aeropuerto.
+
+3. Ejecución y Visualización de Resultados
+
+El método ejecutar() coordina la ejecución del flujo completo:
+
+Crea los actores y las tareas.
+
+Asigna tareas a los actores.
+
+Imprime un resumen detallado de las tareas asignadas, el tiempo total requerido para completarlas y una validación sobre si el tiempo total supera el límite de 100 minutos.
+
+Ejecución del Proyecto
+
+1. Compilación
+
+Asegúrate de que todos los archivos fuente estén correctamente configurados en el sistema de construcción (por ejemplo, CMake). Compila el proyecto para generar el ejecutable.
+
+2. Ejecución
+
+Ejecuta el archivo compilado. El programa mostrará el resultado del proceso, incluyendo el resumen de las tareas asignadas a cada actor, el tiempo total requerido y si cumplen con el límite de tiempo establecido.
+
+Ejemplo de salida
+
+
+
