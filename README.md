@@ -49,3 +49,6 @@ Entrega:
 
 - Código fuente en C++ que implemente la solución al problema.
 - Diagrama de flujo que represente el cronograma de ejecución de las tareas.
+
+### Resolución del problema
+
