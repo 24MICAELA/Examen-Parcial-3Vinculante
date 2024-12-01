@@ -1,6 +1,6 @@
 # Examen-Parcial-3Vinculante
 
-[Link del repositorio] https://github.com/24MICAELA/Examen-Parcial-3Vinculante.git
+[Link del repositorio] (https://github.com/24MICAELA/Examen-Parcial-3Vinculante.git)
 
 ## Enunciado del Problema:
 
