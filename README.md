@@ -8,19 +8,20 @@ Objetivo: Debido a la urgencia de la situación, necesitan optimizar las tareas 
 
 Tareas, Descripciones y Duraciones:
 
-A: Reserva de vuelo (20 min)
-B: Informar a casa para empacar (5 min)
-C: Empacar maletas (40 min)
-D: Preparación del billete por la agencia (10 min)
-E: Recoger el billete de la agencia (5 min)
-F: Llevar el billete a la oficina (10 min)
-G: Recoger las maletas de casa (20 min)
-H: Llevar maletas a la oficina (25 min)
-I: Conversación sobre documentos requeridos (35 min)
-J: Dictar instrucciones para ausencia (25 min)
-K: Reunir documentos (15 min)
-L: Organizar documentos (5 min)
-M: Viajar al aeropuerto y facturar (25 min)
+- A: Reserva de vuelo (20 min)
+- B: Informar a casa para empacar (5 min)
+- C: Empacar maletas (40 min)
+- D: Preparación del billete por la agencia (10 min)
+- E: Recoger el billete de la agencia (5 min)
+- F: Llevar el billete a la oficina (10 min)
+- G: Recoger las maletas de casa (20 min)
+- H: Llevar maletas a la oficina (25 min)
+- I: Conversación sobre documentos requeridos (35 min)
+- J: Dictar instrucciones para ausencia (25 min)
+- K: Reunir documentos (15 min)
+- L: Organizar documentos (5 min)
+- M: Viajar al aeropuerto y facturar (25 min)
+
 Dependencias entre tareas:
 
 Algunas tareas deben ser realizadas antes que otras, por ejemplo, no se puede viajar al aeropuerto antes de haber recogido las maletas.
