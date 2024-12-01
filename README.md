@@ -54,7 +54,8 @@ Entrega:
 - Diagrama de flujo que represente el cronograma de ejecución de las tareas.
 
 ## Resolución del problema
-Cronograma de ejecución de las tareas
+
+**Cronograma de ejecución de las tareas**
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/1c6fa63b-424a-489a-afc6-12e126ee0e4a" alt="image" width="900">
