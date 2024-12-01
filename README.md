@@ -52,6 +52,7 @@ Entrega:
 
 ### Resolución del problema
 Cronograma de ejecución de las tareas
+
 <img width="501" alt="image" src="https://github.com/user-attachments/assets/1c6fa63b-424a-489a-afc6-12e126ee0e4a">
 
 El proyecto se organiza en torno a varias clases que gestionan la creación de tareas, la asignación de responsabilidades y la ejecución de eventos en secuencia. A continuación se describen los componentes principales:
@@ -66,33 +67,33 @@ Componentes Principales del Proyecto
 
 Estructura de Archivos y Descripción de Clases
 
-Launcher.h / Launcher.cpp
+`Launcher.h/Launcher.cpp`
 
 La clase Launcher organiza el flujo de trabajo general del proyecto. Es responsable de crear las tareas y actores, asignar tareas y presentar los resultados al usuario.
 
 Métodos clave:
 
-crearTareas(): Genera y retorna una lista de tareas predefinidas.
+`crearTareas()`: Genera y retorna una lista de tareas predefinidas.
 
-crearActores(): Genera y retorna una lista de actores predefinidos.
+`crearActores()`: Genera y retorna una lista de actores predefinidos.
 
-asignarTareas(): Distribuye las tareas entre los actores según las responsabilidades definidas.
+`asignarTareas()`: Distribuye las tareas entre los actores según las responsabilidades definidas.
 
-ejecutar(): Ejecuta el proceso completo, incluyendo la creación de elementos, asignación de tareas y visualización de resultados.
+`ejecutar()`: Ejecuta el proceso completo, incluyendo la creación de elementos, asignación de tareas y visualización de resultados.
 
-Actor.h / Actor.cpp
+`Actor.h / Actor.cpp`
 
 La clase Actor define las entidades que gestionan las tareas, como el CEO, el asistente personal, la agencia de viajes y el servicio de transporte.
 
 Métodos clave:
 
-addTarea(const Tarea&): Asocia una tarea al actor.
+`addTarea(const Tarea&)`: Asocia una tarea al actor.
 
-getDuracionTotal(): Calcula la duración total de todas las tareas asignadas.
+`getDuracionTotal()`: Calcula la duración total de todas las tareas asignadas.
 
-toString(): Retorna un texto formateado con el resumen de las tareas asignadas al actor.
+`toString()`: Retorna un texto formateado con el resumen de las tareas asignadas al actor.
 
-Tarea.h / Tarea.cpp
+`Tarea.h / Tarea.cpp`
 
 La clase Tarea encapsula las características de cada tarea.
 
@@ -100,11 +101,11 @@ Atributos: Cada tarea tiene un identificador único, una descripción y una dura
 
 Métodos clave:
 
-getId(), getDesc(), getDuracion(): Getters para obtener el ID, la descripción y la duración de una tarea.
+`getId(), getDesc(), getDuracion()`: Getters para obtener el ID, la descripción y la duración de una tarea.
 
-toString(): Proporciona una representación textual de la tarea.
+`toString()`: Proporciona una representación textual de la tarea.
 
-main.cpp
+`main.cpp`
 
 El archivo principal del programa que instancia la clase Launcher y llama al método ejecutar() para iniciar el flujo del programa.
 
