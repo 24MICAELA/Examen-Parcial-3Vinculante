@@ -1,6 +1,6 @@
 # Examen-Parcial-3Vinculante
 
-### Enunciado del Problema:
+## Enunciado del Problema:
 
 Ustedes son Project Managers en una empresa internacional. Reciben una llamada urgente de un alto ejecutivo, informándoles que el CEO de la compañía ha aterrizado en Barcelona desde Estados Unidos y tiene una reunión crucial para las 19:30 en la ciudad. Sin embargo, el ejecutivo cuenta con solo 100 minutos antes de que cierre la facturación para su vuelo desde Madrid a Barcelona.
 
@@ -26,6 +26,7 @@ Dependencias entre tareas:
 
 Algunas tareas deben ser realizadas antes que otras, por ejemplo, no se puede viajar al aeropuerto antes de haber recogido las maletas.
 Además, la reserva del vuelo debe completarse antes de recoger el billete, y la preparación del billete debe ocurrir antes de llevar el billete a la oficina.
+
 Objetivos del Reto:
 
 - Definir el Objetivo del Proyecto: Identificar el propósito principal del proyecto (optimizar la gestión del tiempo para cumplir con el plazo de 100 minutos) y no solo las tareas.
@@ -50,14 +51,16 @@ Entrega:
 - Código fuente en C++ que implemente la solución al problema.
 - Diagrama de flujo que represente el cronograma de ejecución de las tareas.
 
-### Resolución del problema
+## Resolución del problema
 Cronograma de ejecución de las tareas
 
-<img width="501" alt="image" src="https://github.com/user-attachments/assets/1c6fa63b-424a-489a-afc6-12e126ee0e4a">
+<div style="text-align: center;">
+    <img src="https://github.com/user-attachments/assets/1c6fa63b-424a-489a-afc6-12e126ee0e4a" alt="image" style="width: 700px; height: auto;">
+</div>
 
 El proyecto se organiza en torno a varias clases que gestionan la creación de tareas, la asignación de responsabilidades y la ejecución de eventos en secuencia. A continuación se describen los componentes principales:
 
-Componentes Principales del Proyecto
+### Componentes Principales del Proyecto
 
 - Launcher: Actúa como el punto central del programa, encargándose de coordinar todas las actividades principales.
 
@@ -65,13 +68,13 @@ Componentes Principales del Proyecto
 
 - Tarea: Modela las tareas individuales, cada una con una identificación única, descripción y duración estimada.
 
-Estructura de Archivos y Descripción de Clases
+### Estructura de Archivos y Descripción de Clases
 
 `Launcher.h/Launcher.cpp`
 
 La clase Launcher organiza el flujo de trabajo general del proyecto. Es responsable de crear las tareas y actores, asignar tareas y presentar los resultados al usuario.
 
-Métodos clave:
+### Métodos clave:
 
 `crearTareas()`: Genera y retorna una lista de tareas predefinidas.
 
@@ -85,7 +88,7 @@ Métodos clave:
 
 La clase Actor define las entidades que gestionan las tareas, como el CEO, el asistente personal, la agencia de viajes y el servicio de transporte.
 
-Métodos clave:
+### Métodos clave:
 
 `addTarea(const Tarea&)`: Asocia una tarea al actor.
 
@@ -99,7 +102,7 @@ La clase Tarea encapsula las características de cada tarea.
 
 Atributos: Cada tarea tiene un identificador único, una descripción y una duración.
 
-Métodos clave:
+### Métodos clave:
 
 `getId(), getDesc(), getDuracion()`: Getters para obtener el ID, la descripción y la duración de una tarea.
 
@@ -109,13 +112,13 @@ Métodos clave:
 
 El archivo principal del programa que instancia la clase Launcher y llama al método ejecutar() para iniciar el flujo del programa.
 
-Descripción del Proceso
+### Descripción del Proceso
 
-1. Creación de Tareas y Actores
+### 1. Creación de Tareas y Actores
 
 El proceso comienza con la generación de una lista de tareas y actores mediante los métodos crearTareas() y crearActores() de la clase Launcher. Estos representan las responsabilidades y actividades necesarias para la preparación del CEO de cara a su reunión.
 
-2. Asignación de Tareas
+### 2. Asignación de Tareas
 
 El método asignarTareas() distribuye las tareas a los actores según sus roles específicos. Por ejemplo:
 
@@ -127,7 +130,7 @@ La agencia de viajes realiza gestiones relacionadas con los billetes.
 
 El servicio de transporte lleva al CEO al aeropuerto.
 
-3. Ejecución y Visualización de Resultados
+### 3. Ejecución y Visualización de Resultados
 
 El método ejecutar() coordina la ejecución del flujo completo:
 
@@ -137,17 +140,55 @@ Asigna tareas a los actores.
 
 Imprime un resumen detallado de las tareas asignadas, el tiempo total requerido para completarlas y una validación sobre si el tiempo total supera el límite de 100 minutos.
 
-Ejecución del Proyecto
+### Ejecución del Proyecto
 
-1. Compilación
+### 1. Compilación
 
 Asegúrate de que todos los archivos fuente estén correctamente configurados en el sistema de construcción (por ejemplo, CMake). Compila el proyecto para generar el ejecutable.
 
-2. Ejecución
+### 2. Ejecución
 
 Ejecuta el archivo compilado. El programa mostrará el resultado del proceso, incluyendo el resumen de las tareas asignadas a cada actor, el tiempo total requerido y si cumplen con el límite de tiempo establecido.
 
-Ejemplo de salida
+### Ejemplo de salida
 
+`
+=== Resumen de tareas por actor ===
+Actor: Ejecutivo
+Actor: Ejecutivo
+Tarea: Informar a casa para empacar, Duracion: 5 minutos
+Tarea: Conversacion sobre documentos requeridos, Duracion: 35 minutos
+Tarea: Dictar instrucciones para ausencia, Duracion: 25 minutos
+Tarea: Viajar al aeropuerto y facturar, Duracion: 25 minutos
+Tiempo total para Ejecutivo: 90 minutos
+----------------------------------
+Actor: Gestion de maletas
+Actor: Gestion de maletas
+Tarea: Empacar maletas, Duracion: 40 minutos
+Tarea: Recoger las maletas de casa, Duracion: 20 minutos
+Tarea: Llevar maletas a la oficina, Duracion: 25 minutos
+Tiempo total para Gestion de maletas: 85 minutos
+----------------------------------
+Actor: Gestion de billetes
+Actor: Gestion de billetes
+Tarea: Reserva de vuelo, Duracion: 20 minutos
+Tarea: Preparacion del billete por la agencia, Duracion: 10 minutos
+Tarea: Recoger el billete de la agencia, Duracion: 5 minutos
+Tarea: Llevar el billete a la oficina, Duracion: 10 minutos
+Tiempo total para Gestion de billetes: 45 minutos
+----------------------------------
+Actor: Gestion de documentos
+Actor: Gestion de documentos
+Tarea: Reunir documentos, Duracion: 15 minutos
+Tarea: Organizar documentos, Duracion: 5 minutos
+Tiempo total para Gestion de documentos: 20 minutos
+----------------------------------
+
+=== Verificacion de tiempos ===
+El actor Ejecutivo puede completar sus tareas a tiempo.
+El actor Gestion de maletas puede completar sus tareas a tiempo.
+El actor Gestion de billetes puede completar sus tareas a tiempo.
+El actor Gestion de documentos puede completar sus tareas a tiempo.
+`
 
 
