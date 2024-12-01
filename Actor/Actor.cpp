@@ -1,12 +1,8 @@
-//
-// Created by Micae on 01/12/2024.
-//
-
 #include "Actor.h"
 #include <iostream>
 #include <iomanip> // Para formatear la salida
 
-// Constructor de la clase Actor. Inicializa los atributos id y descripcion.
+// Constructor de la clase Actor. Inicializa los atributos id y descripción.
 Actor::Actor(const std::string& id, const std::string& descripcion)
     : id(id), descripcion(descripcion) {}
 
@@ -35,4 +31,14 @@ int Actor::getDuracionTotal() const {
     return total; // Retorna la duración total.
 }
 
-// Devuelve una cadena que representa al Actor y sus tareas, con la descr
+// Devuelve una cadena que representa al Actor y sus tareas.
+std::string Actor::toString() const {
+    std::string resultado = "Actor: " + descripcion + "\n";  // Mueve el nombre del actor aquí.
+
+    // Recorre todas las tareas del actor y las agrega a la cadena de resultado.
+    for (const auto& tarea : listaTareas) {
+        resultado += tarea.toString() + "\n"; // Llama al método toString de la clase Tarea para cada tarea.
+    }
+
+    return resultado; // Devuelve el string con la información del actor y sus tareas.
+}

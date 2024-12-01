@@ -30,53 +30,67 @@ vector<Tarea> Launcher::crearTareas() {
 // Crea y devuelve una lista de actores predefinidos con su id y descripción.
 vector<Actor> Launcher::crearActores() {
     return {
-        Actor("1", "CEO de la empresa"),
-        Actor("2", "Asistente Personal"),
-        Actor("3", "Agencia de Viajes"),
-        Actor("4", "Servicio de Transporte")
+        Actor("1", "Ejecutivo"),  // Actor 1: Ejecutivo
+        Actor("2", "Gestion de maletas"), // Actor 2: Gestión maletas
+        Actor("3", "Gestion de billetes"),  // Actor 3: Gestión billetes
+        Actor("4", "Gestion de documentos")  // Actor 4: Gestión documentos
     };
 }
 
-// Asigna tareas a los actores de acuerdo a su índice en las listas de actores y tareas.
-// Aquí te aseguras de que los actores y tareas estén correctamente indexados.
 void Launcher::asignarTareas(vector<Actor>& actores, const vector<Tarea>& tareas) {
-    actores[0].addTarea(tareas[1]);  // Actor 1 -> Tarea 1
-    actores[0].addTarea(tareas[8]);  // Actor 1 -> Tarea 8
-    actores[0].addTarea(tareas[9]);  // Actor 1 -> Tarea 9
-    actores[0].addTarea(tareas[12]); // Actor 1 -> Tarea 12
-    actores[1].addTarea(tareas[2]);  // Actor 2 -> Tarea 2
-    actores[1].addTarea(tareas[6]);  // Actor 2 -> Tarea 6
-    actores[1].addTarea(tareas[7]);  // Actor 2 -> Tarea 7
-    actores[2].addTarea(tareas[0]);  // Actor 3 -> Tarea 0
-    actores[2].addTarea(tareas[3]);  // Actor 3 -> Tarea 3
-    actores[2].addTarea(tareas[4]);  // Actor 3 -> Tarea 4
-    actores[2].addTarea(tareas[5]);  // Actor 3 -> Tarea 5
-    actores[3].addTarea(tareas[10]); // Actor 4 -> Tarea 10
-    actores[3].addTarea(tareas[11]); // Actor 4 -> Tarea 11
+    // Asignar tareas a los actores de acuerdo a lo especificado
+    // Actor 1 -> CEO de la empresa (Ejecutivo)
+    actores[0].addTarea(tareas[1]);  // Tarea B: Informar a casa para empacar
+    actores[0].addTarea(tareas[8]);  // Tarea I: Conversacion sobre documentos requeridos
+    actores[0].addTarea(tareas[9]);  // Tarea J: Dictar instrucciones para ausencia
+    actores[0].addTarea(tareas[12]); // Tarea M: Viajar al aeropuerto y facturar
+
+    // Actor 2 -> Asistente Personal (Gestión maletas)
+    actores[1].addTarea(tareas[2]);  // Tarea C: Empacar maletas
+    actores[1].addTarea(tareas[6]);  // Tarea G: Recoger las maletas de casa
+    actores[1].addTarea(tareas[7]);  // Tarea H: Llevar maletas a la oficina
+
+    // Actor 3 -> Agencia de Viajes (Gestión billetes)
+    actores[2].addTarea(tareas[0]);  // Tarea A: Reserva de vuelo
+    actores[2].addTarea(tareas[3]);  // Tarea D: Preparación del billete por la agencia
+    actores[2].addTarea(tareas[4]);  // Tarea E: Recoger el billete de la agencia
+    actores[2].addTarea(tareas[5]);  // Tarea F: Llevar el billete a la oficina
+
+    // Actor 4 -> Servicio de Transporte (Gestión documentos)
+    actores[3].addTarea(tareas[10]); // Tarea K: Reunir documentos
+    actores[3].addTarea(tareas[11]); // Tarea L: Organizar documentos
 }
 
-// Ejecuta el proceso de asignación de tareas, cálculo de tiempos y verificación de cumplimiento de tiempo.
-// Muestra un resumen de las tareas asignadas a cada actor, y verifica si cada actor puede completar sus tareas a tiempo.
 void Launcher::ejecutar() {
     vector<Tarea> tareas = crearTareas();
     vector<Actor> actores = crearActores();
-    asignarTareas(actores, tareas);  // Asignar tareas a los actores
 
-    int tiempoTotal = 0;  // Variable para almacenar el tiempo total de todas las tareas
+    asignarTareas(actores, tareas);
+
+    int tiempoTotal = 0;
     cout << "=== Resumen de tareas por actor ===" << endl;
 
-    // Mostrar informacion de cada actor y su tiempo total
+    // Mostrar información de cada actor solo una vez
     for (const auto& actor : actores) {
+        // Aquí se imprime una sola vez el nombre del actor y sus tareas
         cout << "Actor: " << actor.getDesc() << endl;
-        cout << actor.toString();
+
+        // Mostrar las tareas del actor con el método toString() solo una vez
+        cout << actor.toString();  // Imprime las tareas de un actor una sola vez
         tiempoTotal += actor.getDuracionTotal();
+
         cout << "Tiempo total para " << actor.getDesc() << ": "
              << actor.getDuracionTotal() << " minutos" << endl;
         cout << "----------------------------------" << endl;
     }
 
-    cout << "=== Tiempo total para completar todas las tareas ===" << endl;
-    cout << "Tiempo total: " << tiempoTotal << " minutos" << endl;
-
-    // Verificar si los actores pueden completar sus tareas
-
+    // Verificación de si los actores pueden completar sus tareas a tiempo
+    cout << "\n=== Verificacion de tiempos ===" << endl;
+    for (const auto& actor : actores) {
+        if (actor.getDuracionTotal() > 100) {
+            cout << "El actor " << actor.getDesc() << " NO puede completar sus tareas a tiempo." << endl;
+        } else {
+            cout << "El actor " << actor.getDesc() << " puede completar sus tareas a tiempo." << endl;
+        }
+    }
+}
